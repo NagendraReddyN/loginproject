@@ -1,0 +1,15 @@
+{% if request.user.is_authenticated %}
+    <center>
+    <br><br><h3><p>{{ request.user.username }}</p></h3>
+    <a href="{% url 'logout' %}"><input type="submit" value="Logout"</a>
+{% else %}
+    <center>
+        <br><br><h1>Welcome!</h1>
+    <style>
+        *{
+            background-color:lightblue;
+        }
+    </style>
+    <a href="{% url 'login' %}">Login</a><br><br>
+    <a href="{% url 'signup' %}">Signup</a>
+{% endif %}
